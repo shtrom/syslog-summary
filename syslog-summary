@@ -123,7 +123,7 @@ def split_date(line):
 		m = pat.match(line)
 		if m:
 			return line[:m.end()], line[m.end():]
-	print("line has bad date", "<" + string.rstrip(line) + ">")
+	print("line has bad date", "<" + line.rstrip() + ">")
 	return None, line
 
 def is_gzipped(filename):
