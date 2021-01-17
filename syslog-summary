@@ -172,7 +172,7 @@ def summarize(filename, states):
 		oldlines, oldsha = states[filename]
 		for i in range(oldlines):
 			line = file.readline()
-			shaobj.update(line)
+			shaobj.update(line.encode('UTF8'))
 #		print "OLD-new: %s" % shaobj.hexdigest()
 #		print "OLD-file: %s" % oldsha
 		if shaobj.hexdigest() != oldsha:
@@ -190,7 +190,7 @@ def summarize(filename, states):
 	foo=0
 	while line:
 #		foo+=1
-		shaobj.update(line)
+		shaobj.update(line.encode('UTF8'))
 		linecount += 1
 		
 		if should_be_ignored(line):
